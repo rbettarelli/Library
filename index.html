@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Library</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <script
+      src="https://kit.fontawesome.com/d507937b83.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="headerContainer">
+      <h1><i class="fas fa-thin fa-book-open"></i> My Library</h1>
+      <div>
+        <img src="icon/add-book.png" class="addBookImg hoverImg" />
+      </div>
+    </div>
+    <div class="libraryStatus">
+      <div class="status">
+        <p class="statTitle">Total Books:</p>
+        <p id="totalBooks">0</p>
+
+        <p class="statTitle">Books Completed:</p>
+        <p id="booksComplete">0</p>
+
+        <p class="statusTitle">Books Incompleted:</p>
+        <p id="booksUnread">0</p>
+      </div>
+    </div>
+
+    <div class="newBookContainer">
+      <form action="#" id="addBook">
+        <span class="closeForm"><i class="fas fa-solid fa-circle-xmark closeImg hoverImg" class="closeImg hoverImg"></i></span>
+
+        <input
+          type="text"
+          name="title"
+          id="bookTitle"
+          class="inputForm"
+          placeholder="Book's title"
+          maxlength="50"
+          required
+        />
+
+        <input
+          type="text"
+          name="author"
+          class="inputForm"
+          id="bookAuthor"
+          placeholder="Book's Author"
+          maxlength="30"
+          required
+        />
+
+        <input
+          type="number"
+          name="pages"
+          class="inputForm"
+          id="bookPages"
+          placeholder="Book's Pages"
+          required
+        />
+
+        <div class="checkboxContainer">
+          <label for="read">Have you read this book?</label>
+          <input
+            type="checkbox"
+            name="read"
+            id="readCheckbox"
+            class="form-check-input"
+          />
+        </div>
+
+        <input
+          type="submit"
+          value="Add Book"
+          id="bookAdd"
+          class="btn btn-success"
+        />
+      </form>
+    </div>
+    <main class="main">
+      <div class="booksGrid"></div>
+    </main>
+
+    <!--<div class="card">
+    <h2 class="cardTitle"></h2>
+    <p class="cardAuthor"></p>
+    <p class="cardPages"></p>
+    <label for="cardCheckbox">Already read this book?</label>
+    <input type="checkbox" class="cardCheckbox" id="cardCheckbox" name="cardCheckbox">
+</div> -->
+<div class="footer">
+ 
+    <p>
+      Copyright ©
+      <script>
+        document.write(new Date().getFullYear());
+      </script>
+    </p>
+    <a href="https://github.com/rbettarelli" target="_blank">
+      rbettarelli
+      <i class="fab fa-github"></i
+    ></a>
+  
+
+
+</div>
+
+  
+    <script src="main.js"></script>
+  </body>
+  
+</html>
