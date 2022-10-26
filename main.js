@@ -18,24 +18,15 @@ closeForm.addEventListener("click", () => {
   form.reset();
 });
 
-function updateStatusBook() {
-  let completeCount = 0;
-  let incompleteCount = 0;
-  totalBooks.innerHTML = myLibrary.length;
-  for (let i = 0; i < myLibrary.length; i++) {
-    if ((myLibrary[i].read = "true")) {
-      completeCount++;
-      booksComplete.innerHTML = completeCount;
-    }
-    if ((myLibrary[i].read = "false")) {
-      incompleteCount++;
-      booksUnread.innerHTML = incompleteCount;
-    }
-  }
-}
+
 
 class Book {
-  constructor(title, author, pages, read) {
+  constructor(
+    title = "Unknown",
+    author = "Unknown",
+    pages = "0",
+    read = "false"
+  ) {
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -44,6 +35,10 @@ class Book {
 }
 
 const myLibrary = JSON.parse(localStorage.getItem("storage")) || [];
+
+const updateLocalStorage = () => {
+  localStorage.setItem("storage", JSON.stringify(myLibrary));
+};
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -59,11 +54,7 @@ form.addEventListener("submit", (e) => {
   showBooks();
 });
 
-function updateLocalStorage() {
-  localStorage.setItem("storage", JSON.stringify(myLibrary));
-}
-
-function showBooks() {
+const showBooks = () => {
   bookSelection.textContent = "";
   myLibrary.forEach((newBook, index) => {
     createBookCard(newBook, index);
@@ -73,9 +64,9 @@ function showBooks() {
   updateBookRead();
   updateLocalStorage();
   updateStatusBook();
-}
+};
 
-function removeBooks() {
+const removeBooks = () => {
   const removeBtn = document.querySelectorAll(".card-btn");
   removeBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -84,9 +75,9 @@ function removeBooks() {
       showBooks();
     });
   });
-}
+};
 
-function updateBookRead() {
+const updateBookRead = () => {
   const bookCheckbox = document.querySelectorAll(".card-checkbox");
   bookCheckbox.forEach((checkbox) => {
     checkbox.addEventListener("click", (update) => {
@@ -98,9 +89,9 @@ function updateBookRead() {
       updateStatusBook();
     });
   });
-}
+};
 
-function updateStatusBook() {
+const updateStatusBook = () => {
   const booksComplete = document.getElementById("booksComplete");
   const booksUnread = document.getElementById("booksUnread");
   const totalBooks = document.getElementById("totalBooks");
@@ -125,7 +116,7 @@ function updateStatusBook() {
 Book.prototype.updateBook = function (index, value) {
   myLibrary[index].read = value;
 };
-function createBookCard(book, index) {
+const createBookCard = (book, index) => {
   const newCardDiv = document.createElement("div");
   newCardDiv.classList.add("bookCard");
 
