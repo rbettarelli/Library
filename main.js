@@ -9,20 +9,14 @@ const bookAdd = document.querySelector("#bookAdd");
 const bookSelection = document.querySelector(".booksGrid");
 const totalBooks = document.getElementById("totalBooks");
 
-
-
-
 newBookbtn.addEventListener("click", () => {
-
-    document.querySelector(".newBookContainer").style.display = "block";
-  }
-
-)
+  document.querySelector(".newBookContainer").style.display = "block";
+});
 
 closeForm.addEventListener("click", () => {
   document.querySelector(".newBookContainer").style.display = "none";
   form.reset();
-})
+});
 
 function updateStatusBook() {
   let completeCount = 0;
@@ -40,11 +34,13 @@ function updateStatusBook() {
   }
 }
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
 }
 
 const myLibrary = JSON.parse(localStorage.getItem("storage")) || [];
