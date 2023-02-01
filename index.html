@@ -7,10 +7,7 @@
     <title>My Library</title>
     <link rel="stylesheet" href="style.css" />
 
-    <script
-      src="https://kit.fontawesome.com/d507937b83.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/d507937b83.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="headerContainer">
@@ -36,51 +33,18 @@
       <form action="#" id="addBook">
         <span class="closeForm"><i class="fas fa-solid fa-circle-xmark closeImg hoverImg" class="closeImg hoverImg"></i></span>
 
-        <input
-          type="text"
-          name="title"
-          id="bookTitle"
-          class="inputForm"
-          placeholder="Book's title"
-          maxlength="50"
-          required
-        />
+        <input type="text" name="title" id="bookTitle" class="inputForm" placeholder="Book's title" maxlength="50" required />
 
-        <input
-          type="text"
-          name="author"
-          class="inputForm"
-          id="bookAuthor"
-          placeholder="Book's Author"
-          maxlength="30"
-          required
-        />
+        <input type="text" name="author" class="inputForm" id="bookAuthor" placeholder="Book's Author" maxlength="30" required />
 
-        <input
-          type="number"
-          name="pages"
-          class="inputForm"
-          id="bookPages"
-          placeholder="Book's Pages"
-          required
-        />
+        <input type="number" name="pages" class="inputForm" id="bookPages" placeholder="Book's Pages" required />
 
         <div class="checkboxContainer">
           <label for="read">Have you read this book?</label>
-          <input
-            type="checkbox"
-            name="read"
-            id="readCheckbox"
-            class="form-check-input"
-          />
+          <input type="checkbox" name="read" id="readCheckbox" class="form-check-input" />
         </div>
 
-        <input
-          type="submit"
-          value="Add Book"
-          id="bookAdd"
-          class="btn btn-success"
-        />
+        <input type="submit" value="Add Book" id="bookAdd" class="btn btn-success" />
       </form>
     </div>
     <main class="main">
@@ -94,25 +58,19 @@
     <label for="cardCheckbox">Already read this book?</label>
     <input type="checkbox" class="cardCheckbox" id="cardCheckbox" name="cardCheckbox">
 </div> -->
-<div class="footer">
- 
-    <p>
-      Copyright ©
-      <script>
-        document.write(new Date().getFullYear());
-      </script>
-    </p>
-    <a href="https://github.com/rbettarelli" target="_blank">
-      rbettarelli
-      <i class="fab fa-github"></i
-    ></a>
-  
+    <div class="footer">
+      <p>
+        Copyright ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+      </p>
+      <a href="https://github.com/rbettarelli" target="_blank">
+        rbettarelli
+        <i class="fab fa-github"></i
+      ></a>
+    </div>
 
-
-</div>
-
-  
     <script src="main.js"></script>
   </body>
-  
 </html>
